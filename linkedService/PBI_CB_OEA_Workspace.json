@@ -1,0 +1,12 @@
+{
+	"name": "PBI_CB_OEA_Workspace",
+	"type": "Microsoft.Synapse/workspaces/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "PowerBIWorkspace",
+		"typeProperties": {
+			"workspaceID": "4418610f-20c0-4268-94f6-2ce2a284e985",
+			"tenantID": "4e706abf-8330-4d0e-9ccd-f453429d3f47"
+		}
+	}
+}

@@ -1,0 +1,59 @@
+{
+	"name": "SISData",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "OEA Github",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"File": {
+				"type": "string"
+			}
+		},
+		"folder": {
+			"name": "SISData"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation",
+				"relativeUrl": {
+					"value": "@concat('Contoso_SIS/test_data/',dataset().File)",
+					"type": "Expression"
+				}
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "SIS ID",
+				"type": "String"
+			},
+			{
+				"name": "FederalRaceCategory",
+				"type": "String"
+			},
+			{
+				"name": "PrimaryLanguage",
+				"type": "String"
+			},
+			{
+				"name": "ELLStatus",
+				"type": "String"
+			},
+			{
+				"name": "SpecialEducation",
+				"type": "String"
+			},
+			{
+				"name": "LowIncome",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.Synapse/workspaces/datasets"
+}
