@@ -1,12 +1,12 @@
-> This folder has been populated with initial templates to help get you started with the module creation process. Please make sure to update this folder and all its associated files and folders by following the guidelines provided in the [OEA Module Creation Kit](https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fraw.githubusercontent.com%2Fmicrosoft%2FOpenEduAnalytics%2Fmain%2Fdocs%2Ftech_docs%2FOEA_Module_Creation_Kit_v1.4.docx&wdOrigin=BROWSELINK) document. To review an example of an Advanced OEA Module, check out the [Microsoft Education Insights module](https://github.com/microsoft/OpenEduAnalytics/tree/main/modules/module_catalog/Microsoft_Education_Insights).
-
+> 
 <img align="right" height="100" src="https://github.com/microsoft/OpenEduAnalytics/blob/main/docs/pics/oea-logo-nobg.png">
 
-# Name of Module
-Provide an overview of the module.
-![image](https://github.com/microsoft/OpenEduAnalytics/blob/main/modules/module_creation_kit/docs/images/Module_Overview_Visual.png) 
+# Xporter Module
+This module enables the orchestration and analysis of school data from Xporter.  Xporter is a common SIS data extraction tool installed in 20k schools in the UK, and supports the Community Brands porfolio of Education products in the US and internationally.  Over 100 EdTech partners use Xporter to provision data to their own products.  Use of this Xporter module for OEA enables Use Cases where integration with the school SIS is beneficial.
+![image](https://github.com/Sarang-CommunityBrands/OEA/blob/main/docs/images/Xporter_module_overview_visual.png) 
 
 ## Problem Statement and Module Impact
+https://github.com/Sarang-CommunityBrands/OEA/blob/main/docs/README.md
 Define the problem you seek to solve using this module, and list out the impact and benefits this module will have on learners, educators and the learning process.
 
 ## Module Setup Instructions
