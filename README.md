@@ -3,10 +3,11 @@
 
 # Xporter Module
 This module enables the orchestration and analysis of school data from Xporter.  Xporter is a common SIS data extraction tool installed in 20k schools in the UK, and supports the Community Brands porfolio of Education products in the US and internationally.  Over 100 EdTech partners use Xporter to provision data to their own products.  Use of this Xporter module for OEA enables Use Cases where integration with the school SIS is beneficial.
-![image](https://github.com/Sarang-CommunityBrands/OEA/blob/main/docs/images/Xporter_module_overview_visual.png) 
+![image](https://github.com/Sarang-CommunityBrands/OEA/blob/main/docs/images/Xporter_module_overview_visual.PNG) 
+
 
 ## Problem Statement and Module Impact
-https://github.com/Sarang-CommunityBrands/OEA/blob/main/docs/README.md
+
 Define the problem you seek to solve using this module, and list out the impact and benefits this module will have on learners, educators and the learning process.
 
 ## Module Setup Instructions
