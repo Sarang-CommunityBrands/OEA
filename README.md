@@ -5,34 +5,62 @@
 This module enables the orchestration and analysis of school data from Xporter.  Xporter is a common SIS data extraction tool installed in 20k schools in the UK, and supports the Community Brands porfolio of Education products in the US and internationally.  Over 100 EdTech partners use Xporter to provision data to their own products.  Use of this Xporter module for OEA enables Use Cases where integration with the school SIS is beneficial.
 ![image](https://github.com/Sarang-CommunityBrands/OEA/blob/main/docs/images/Xporter_module_overview_visual.PNG) 
 
+For further details on Xporter including how it works for EdTech Partners, Local Authorities and Schools and Trusts see https://www.xporter.uk/
 
 ## Problem Statement and Module Impact
+For effective Education Analytics it is important to have access to contextual information about the student.  This contextual information may be pertain to year groups, classes and courses but also on levels of special educational need, and aspects such as levels of family income deprivation.    In particular, when this information is agregated across schooling systems it may reside in different student information systems (SIS).  Xporter provides a standardised schema solution to this challenge by calling multiple vendor-specific API, and this Module for OEA provides access to data following OEA standard practices inside a customers owned Azure Synapse infrastructure.
 
-Define the problem you seek to solve using this module, and list out the impact and benefits this module will have on learners, educators and the learning process.
+This module is therefore fundamental to both individual analysis of data from a supported SIS as well as using these data in combination with other OEA Modules, such as M365 and Insights to add contextual dimensions to student engagement and learning outcomes analysis (for example).
 
 ## Module Setup Instructions
-Explanation of how to use the module: prerequisites (like subscriptions), what types of data transfer services can be used to ingest in OEA, simple overview of implementation, etc.
-![image](https://github.com/microsoft/OpenEduAnalytics/blob/main/modules/module_creation_kit/docs/images/Module_Setup_Instructions.png) 
+This module has two pre-requisites and four main steps to complete the setup.  An overiew is as follows:
+![image](https://github.com/Sarang-CommunityBrands/OEA/blob/main/docs/images/Xporter_module_setup_instructions.PNG) 
+
+Step 1: (Pre-requisite) The module assumes that you have already established an OEA environment of at least v0.7.  If you do not already have an OEA environment available, please follow the steps available at https://github.com/microsoft/OpenEduAnalytics 
+
+Step 2: (Pre-requisite for live operation, not required for Test data only) Live operation to your school data estate requires a subscription to Xporter for your institutions.  If you are an existing Xporter partner you may use your existing Relying Party and Secret for OEA.  For new subscriptions please see https://www.xporter.uk/become-a-partner/ or contact your Community Brands account manager.
+
+Step 3: Open Cloud Shell in your Azure subscription (use ctrl+click on the button below to open in a new page)
+[![Launch Cloud Shell](https://azurecomcdn.azureedge.net/mediahandler/acomblog/media/Default/blog/launchcloudshell.png "Launch Cloud Shell")](https://shell.azure.com/bash)
+Download the Xporter framework setup script and framework assets to your Azure clouddrive\
+`cd clouddrive`\
+`wget https://github.com/Sarang-CommunityBrands/OEA/blob/main/Xporter_OEA_setup.zip`\
+`unzip ./Xporter_OEA_setup.zip`
+Use the Cloud Shell Editor to change the parameters in the final line in the xporter_module.ps1 script to represent your OEA environment:
+    Parameter 1: Your Azure Subscription (for example 85b8c3b3-15d3-4099-aabc-15a34b4abb1a)
+    Parameter 2: Your OEA Resource Group Name (for example rg-oea-yoursuffix)
+    Parameter 3: Your Key Vault Name (for example kv-oea-yoursuffix)
+    Parameter 4: Your Synapse Name (for example syn-oea-yoursuffix)
+    Parameter 5: Your Spark Pool Name (for example spark3p2sm)
+For example: Set-OEA 85b8c3b3-15d3-4099-aabc-15a34b4abb1a rg-oea-yoursuffix kv-oea-yoursuffix syn-oea-yoursuffix spark3p2sm
+Hit CTRL+S to save the file (or right click and select Save)
+Run the setup script like this:
+`pwsh ./xporter_module.ps1`\
 
 ## Data Sources
-Description of data sources: what it is used for, data available, data format and possible use cases or OEA packages it can be used for.
+The following are the Xporter API endpoints that are supported in the current release:
+
+Endpoint 1: Schoolinfo.  See https://xporter.groupcall.com/Manage#Query-xod.1.SchoolInfo
+Endpoint 2: Students.  See https://xporter.groupcall.com/Manage#Endpoint-1.school.students
+Endpoint 3: Groups.  See https://xporter.groupcall.com/Manage#Query-xod.1.Groups
+Endpoint 4: StudentMembers.  See https://xporter.groupcall.com/Manage#Query-xod.1.Groups
+Endpoint 5: AttendanceSummary.  See https://xporter.groupcall.com/Manage#Query-xod.1.AttendanceSummary
+Endpoint 6: Historical Attendance Summary.  See https://xporter.groupcall.com/Manage#Query-xod.1.HistoricalAttendanceSummary
 
 ## Module Components 
 Sample out-of-the box assets for this OEA module include: 
-1. [Pipeline](https://github.com/microsoft/OpenEduAnalytics/tree/main/modules/module_creation_kit/pipeline) for ingesting data into the data lake and automating the various stages of the process.
-2. [Notebook](https://github.com/microsoft/OpenEduAnalytics/tree/main/modules/module_creation_kit/notebook) for cleaning, transforming, anonymizing and enriching the data.
-3. [Test Data](https://github.com/microsoft/OpenEduAnalytics/tree/main/modules/module_creation_kit/test_data) with artificially generated test data which supports the module pipeline and Power BI template. 
-4. [PowerBI Template](https://github.com/microsoft/OpenEduAnalytics/tree/main/modules/module_creation_kit/powerbi) for exploring, visualizing and deriving insights from the data.
+1. [Pipeline](https://github.com/Sarang-CommunityBrands/OEA/tree/main/pipeline) for ingesting data into the data lake and automating the various stages of the process.
+2. [Notebook](https://github.com/Sarang-CommunityBrands/OEA/tree/main/notebook) for cleaning, transforming, anonymizing and enriching the data.
+3. Test data configuration to hosted demo SIS instances which supports the module pipeline and Power BI template. 
+4. [PowerBI Template](https://github.com/Sarang-CommunityBrands/OEA/tree/main/powerbi) for exploring, visualizing and deriving insights from the data.
 
-[include links to any other assets like tutorials, test data, etc you are providing as part of this module.]
+## Module User Guide
+A [User Guide](https://github.com/Sarang-CommunityBrands/OEA/tree/main/docs/xporterOEAmoduleuserguide.pdf) that explains further information about the use of the module and the Power BI template is available.
 
-Dashboard Explanation | Sample Dashboard Page
-:-------------------------:|:-------------------------:
-![](https://github.com/microsoft/OpenEduAnalytics/blob/main/modules/module_creation_kit/docs/images/Module_Dashboard_Overview_Sample.png) |  ![](https://github.com/microsoft/OpenEduAnalytics/blob/main/modules/module_creation_kit/docs/images/Module_Dashboard_Page1_Sample.png)    
 
-The [name of module] module [welcome contributions.](https://github.com/microsoft/OpenEduAnalytics/blob/main/docs/license/CONTRIBUTING.md) 
+The Xporter module [welcome contributions.](https://github.com/microsoft/OpenEduAnalytics/blob/main/docs/license/CONTRIBUTING.md) 
 
-This module was developed by [name of contributor] in partnership with [name of education system, if any]. The architecture and reference implementation for all modules is built on [Azure Synapse Analytics](https://azure.microsoft.com/en-us/services/synapse-analytics/) - with [Azure Data Lake Storage](https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction) as the storage backbone,  and [Azure Active Directory](https://azure.microsoft.com/en-us/services/active-directory/) providing the role-based access control.
+This module was developed by Community Brands UK in partnership with Greenwood Academies Trust and Dixons Academies Trust. The architecture and reference implementation for all modules is built on [Azure Synapse Analytics](https://azure.microsoft.com/en-us/services/synapse-analytics/) - with [Azure Data Lake Storage](https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-introduction) as the storage backbone,  and [Azure Active Directory](https://azure.microsoft.com/en-us/services/active-directory/) providing the role-based access control.
 
 #### Additional Information
 Provide any additional information and resources.
