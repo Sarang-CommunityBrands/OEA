@@ -25,39 +25,42 @@ Step 3: Open Cloud Shell in your Azure subscription (use ctrl+click on the butto
 Download the Xporter framework setup script and framework assets to your Azure clouddrive\
 `cd clouddrive`\
 `wget https://github.com/Sarang-CommunityBrands/OEA/blob/main/Xporter_OEA_setup.zip`\
-`unzip ./Xporter_OEA_setup.zip`\
+`unzip ./Xporter_OEA_setup.zip`
 
-Step 4: Use the Cloud Shell Editor to change the parameters in the final line in the xporter_module.ps1 script to represent your OEA environment:\
-    Parameter 1: Your Azure Subscription (for example 85b8c3b3-15d3-4099-aabc-15a34b4abb1a)\
-    Parameter 2: Your OEA Resource Group Name (for example rg-oea-yoursuffix)\
-    Parameter 3: Your Key Vault Name (for example kv-oea-yoursuffix)\
-    Parameter 4: Your Synapse Name (for example syn-oea-yoursuffix)\
-    Parameter 5: Your Spark Pool Name (for example spark3p2sm)\
+Step 4: Use the Cloud Shell Editor to change the parameters in the final line in the xporter_module.ps1 script to represent your OEA environment:
+
+* Param1 - Your Azure Subscription (for example 85b8c3b3-15d3-4099-aabc-15a34b4abb1a)
+* Param2 - Your OEA Resource Group Name (for example rg-oea-yoursuffix)
+* Param3 - Your Key Vault Name (for example kv-oea-yoursuffix)
+* Param4 - Your Synapse Name (for example syn-oea-yoursuffix)
+* Param5 - Your Spark Pool Name (for example spark3p2sm)
+
 For example: \
-`Set-OEA 85b8c3b3-15d3-4099-aabc-15a34b4abb1a rg-oea-yoursuffix kv-oea-yoursuffix syn-oea-yoursuffix spark3p2sm`\
+`Set-OEA 85b8c3b3-15d3-4099-aabc-15a34b4abb1a rg-oea-yoursuffix kv-oea-yoursuffix syn-oea-yoursuffix spark3p2sm`
+
 Hit CTRL+S to save the file (or right click and select Save)\
 Run the setup script like this:\
-`pwsh ./xporter_module.ps1`\
+`pwsh ./xporter_module.ps1`
 
 ## Data Sources
 The following are the Xporter API endpoints that are supported in the current release:
 
-Endpoint 1: Schoolinfo.  See https://xporter.groupcall.com/Manage#Query-xod.1.SchoolInfo\
-Endpoint 2: Students.  See https://xporter.groupcall.com/Manage#Endpoint-1.school.students\
-Endpoint 3: Groups.  See https://xporter.groupcall.com/Manage#Query-xod.1.Groups\
-Endpoint 4: StudentMembers.  See https://xporter.groupcall.com/Manage#Query-xod.1.Groups\
-Endpoint 5: AttendanceSummary.  See https://xporter.groupcall.com/Manage#Query-xod.1.AttendanceSummary\
-Endpoint 6: Historical Attendance Summary.  See https://xporter.groupcall.com/Manage#Query-xod.1.HistoricalAttendanceSummary\
+1. [Schoolinfo](https://xporter.groupcall.com/Manage#Query-xod.1.SchoolInfo)
+2. [Students](https://xporter.groupcall.com/Manage#Endpoint-1.school.students)
+3. [Groups](https://xporter.groupcall.com/Manage#Query-xod.1.Groups)
+4. [StudentMembers](https://xporter.groupcall.com/Manage#Query-xod.1.Groups)
+5. [AttendanceSummary](https://xporter.groupcall.com/Manage#Query-xod.1.AttendanceSummary)
+6. [Historical Attendance Summary](https://xporter.groupcall.com/Manage#Query-xod.1.HistoricalAttendanceSummary)
 
 ## Module Components 
-Sample out-of-the box assets for this OEA module include: \
-1. [Pipeline](https://github.com/Sarang-CommunityBrands/OEA/tree/main/pipeline) for ingesting data into the data lake and automating the various stages of the process.\
-2. [Notebook](https://github.com/Sarang-CommunityBrands/OEA/tree/main/notebook) for cleaning, transforming, anonymizing and enriching the data.\
-3. Test data configuration to hosted demo SIS instances which supports the module pipeline and Power BI template. \
-4. [PowerBI Template](https://github.com/Sarang-CommunityBrands/OEA/tree/main/powerbi) for exploring, visualizing and deriving insights from the data.\
+Sample out-of-the box assets for this OEA module include: 
+1. [Pipeline](https://github.com/Sarang-CommunityBrands/OEA/tree/main/pipeline) for ingesting data into the data lake and automating the various stages of the process.
+2. [Notebook](https://github.com/Sarang-CommunityBrands/OEA/tree/main/notebook) for cleaning, transforming, anonymizing and enriching the data.
+3. Test data configuration to hosted demo SIS instances which supports the module pipeline and Power BI template. 
+4. [PowerBI Template](https://github.com/Sarang-CommunityBrands/OEA/tree/main/powerbi) for exploring, visualizing and deriving insights from the data.
 
 ## Module User Guide
-A [User Guide](https://github.com/Sarang-CommunityBrands/OEA/tree/main/docs/xporterOEAmoduleuserguide.pdf) that explains further information about the use of the module and the Power BI template is available.\
+A [User Guide](https://github.com/Sarang-CommunityBrands/OEA/tree/main/docs/xporterOEAmoduleuserguide.pdf) that explains further information about the use of the module and the Power BI template is available.
 
 
 Community Brands UK and the Xporter Module [welcome contributions.](https://github.com/microsoft/OpenEduAnalytics/blob/main/docs/license/CONTRIBUTING.md) 
@@ -68,15 +71,10 @@ This module was developed by Community Brands UK in partnership with Greenwood A
 
 Microsoft and any contributors grant you a license to the Microsoft documentation and other content
 in this repository under the [Creative Commons Attribution 4.0 International Public License](https://creativecommons.org/licenses/by/4.0/legalcode),
-see the [LICENSE](https://github.com/microsoft/OpenEduAnalytics/blob/main/docs/license/LICENSE) file, and grant you a license to any code in the repository under the [MIT License](https://opensource.org/licenses/MIT), see the
-[LICENSE-CODE](https://github.com/microsoft/OpenEduAnalytics/blob/main/docs/license/LICENSE-CODE) file.
+see the [LICENSE](https://github.com/microsoft/OpenEduAnalytics/blob/main/docs/license/LICENSE) file, and grant you a license to any code in the repository under the [MIT License](https://opensource.org/licenses/MIT), see the [LICENSE-CODE](https://github.com/microsoft/OpenEduAnalytics/blob/main/docs/license/LICENSE-CODE) file.
 
-Microsoft, Windows, Microsoft Azure and/or other Microsoft products and services referenced in the documentation
-may be either trademarks or registered trademarks of Microsoft in the United States and/or other countries.
-The licenses for this project do not grant you rights to use any Microsoft names, logos, or trademarks.
-Microsoft's general trademark guidelines can be found at http://go.microsoft.com/fwlink/?LinkID=254653.
+Microsoft, Windows, Microsoft Azure and/or other Microsoft products and services referenced in the documentation may be either trademarks or registered trademarks of Microsoft in the United States and/or other countries. The licenses for this project do not grant you rights to use any Microsoft names, logos, or trademarks. Microsoft's general trademark guidelines can be found at http://go.microsoft.com/fwlink/?LinkID=254653.
 
 Privacy information can be found at https://privacy.microsoft.com/en-us/
 
-Microsoft and any contributors reserve all other rights, whether under their respective copyrights, patents,
-or trademarks, whether by implication, estoppel or otherwise.
+Microsoft and any contributors reserve all other rights, whether under their respective copyrights, patents, or trademarks, whether by implication, estoppel or otherwise.
