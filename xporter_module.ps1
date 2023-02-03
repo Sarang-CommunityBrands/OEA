@@ -43,19 +43,19 @@ Set-AzKeyVaultSecret -VaultName $keyVaultName -Name $secretRelyingPartySecretNam
 
 
 #setting up OEA python
-az synapse notebook import --workspace-name $synapseName --name Xporter_py --spark-pool-name $sparkPoolName --file @$HOME/OEA-Setup/Xporter_OEA_setup/Xporter_py.ipynb
-az synapse notebook import --workspace-name $synapseName --name Ingest_schoolinfo --spark-pool-name $sparkPoolName --file @$HOME/OEA-Setup/Xporter_OEA_setup/Ingest_schoolinfo.ipynb
-az synapse notebook import --workspace-name $synapseName --name Ingest_students --spark-pool-name $sparkPoolName --file @$HOME/OEA-Setup/Xporter_OEA_setup/Ingest_students.ipynb
-az synapse notebook import --workspace-name $synapseName --name Ingest_attendancesummary --spark-pool-name $sparkPoolName --file @$HOME/OEA-Setup/Xporter_OEA_setup/Ingest_attendancesummary.ipynb
-az synapse notebook import --workspace-name $synapseName --name Ingest_groups --spark-pool-name $sparkPoolName --file @$HOME/OEA-Setup/Xporter_OEA_setup/Ingest_groups.ipynb
-az synapse notebook import --workspace-name $synapseName --name Ingest_HistoricalAttendanceSummary --spark-pool-name $sparkPoolName --file @$HOME/OEA-Setup/Xporter_OEA_setup/Ingest_HistoricalAttendanceSummary.ipynb
-az synapse notebook import --workspace-name $synapseName --name Ingest_Ingest_staff --spark-pool-name $sparkPoolName --file @$HOME/OEA-Setup/Xporter_OEA_setup/Ingest_staff.ipynb
-az synapse notebook import --workspace-name $synapseName --name Ingest_StudentMembers --spark-pool-name $sparkPoolName --file @$HOME/OEA-Setup/Xporter_OEA_setup/Ingest_StudentMembers.ipynb
+az synapse notebook import --workspace-name $synapseName --name Xporter_py --spark-pool-name $sparkPoolName --file @$Home/clouddrive/OEA-Setup/Xporter_OEA_setup/Xporter_py.ipynb
+az synapse notebook import --workspace-name $synapseName --name Ingest_schoolinfo --spark-pool-name $sparkPoolName --file @$Home/clouddrive/OEA-Setup/Xporter_OEA_setup/Ingest_schoolinfo.ipynb
+az synapse notebook import --workspace-name $synapseName --name Ingest_students --spark-pool-name $sparkPoolName --file @$Home/clouddrive/OEA-Setup/Xporter_OEA_setup/Ingest_students.ipynb
+az synapse notebook import --workspace-name $synapseName --name Ingest_attendancesummary --spark-pool-name $sparkPoolName --file @$Home/clouddrive/OEA-Setup/Xporter_OEA_setup/Ingest_attendancesummary.ipynb
+az synapse notebook import --workspace-name $synapseName --name Ingest_groups --spark-pool-name $sparkPoolName --file @$Home/clouddrive/OEA-Setup/Xporter_OEA_setup/Ingest_groups.ipynb
+az synapse notebook import --workspace-name $synapseName --name Ingest_HistoricalAttendanceSummary --spark-pool-name $sparkPoolName --file @$Home/clouddrive/OEA-Setup/Xporter_OEA_setup/Ingest_HistoricalAttendanceSummary.ipynb
+az synapse notebook import --workspace-name $synapseName --name Ingest_Ingest_staff --spark-pool-name $sparkPoolName --file @$Home/clouddrive/OEA-Setup/Xporter_OEA_setup/Ingest_staff.ipynb
+az synapse notebook import --workspace-name $synapseName --name Ingest_StudentMembers --spark-pool-name $sparkPoolName --file @$Home/clouddrive/OEA-Setup/Xporter_OEA_setup/Ingest_StudentMembers.ipynb
 
 #setting up pipelines
-az synapse pipeline create --workspace-name $synapseName --name import_from_xporter --file @$HOME/OEA-Setup/Xporter_OEA_setup/import_from_xporter.json
-az synapse pipeline create --workspace-name $synapseName --name setup_xporter --file @$HOME/OEA-Setup/Xporter_OEA_setup/setup_xporter.json
-az synapse pipeline create --workspace-name $synapseName --name OEA_data_ingestion --file @$HOME/OEA-Setup/Xporter_OEA_setup/OEA_data_ingestion.json
+az synapse pipeline create --workspace-name $synapseName --name import_from_xporter --file @$Home/clouddrive/OEA-Setup/Xporter_OEA_setup/import_from_xporter.json
+az synapse pipeline create --workspace-name $synapseName --name setup_xporter --file @$Home/clouddrive/OEA-Setup/Xporter_OEA_setup/setup_xporter.json
+az synapse pipeline create --workspace-name $synapseName --name OEA_data_ingestion --file @$Home/clouddrive/OEA-Setup/Xporter_OEA_setup/OEA_data_ingestion.json
 
 #cleaning the resources
 rm -r OEA-Setup
