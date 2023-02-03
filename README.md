@@ -24,8 +24,8 @@ Step 3: Open Cloud Shell in your Azure subscription (use ctrl+click on the butto
 [![Launch Cloud Shell](https://azurecomcdn.azureedge.net/mediahandler/acomblog/media/Default/blog/launchcloudshell.png "Launch Cloud Shell")](https://shell.azure.com/bash)\
 Download the Xporter framework setup script and framework assets to your Azure clouddrive\
 `cd clouddrive`\
-`wget https://github.com/Sarang-CommunityBrands/OEA/blob/main/Xporter_OEA_setup.zip`\
-`unzip ./Xporter_OEA_setup.zip`
+`wget https://github.com/Sarang-CommunityBrands/OEA/blob/main/Xporter_OEA_setup.zip?raw=true`\
+`unzip ./Xporter_OEA_setup.zip?raw=true`
 
 Step 4: Use the Cloud Shell Editor to change the parameters in the final line in the xporter_module.ps1 script to represent your OEA environment:
 
